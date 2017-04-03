@@ -7,11 +7,11 @@
 [ "$PLAYONLINUX" = "" ] && exit 0
 source "$PLAYONLINUX/lib/sources"
 
-TITLE="Titanic: Adventure Out of Time"
-PREFIX="titanic"
+TITLE="The Day The World Broke"
+PREFIX="tdtwb"
 WORKING_WINE_VERSION="2.4"
-EDITOR="Cyberflix"
-GAME_URL="https://en.wikipedia.org/wiki/Titanic:_Adventure_Out_of_Time"
+EDITOR="Houghton Mifflin Interactive - David Wiesner"
+GAME_URL="http://www.houghtonmifflinbooks.com/authors/wiesner/books/books_day.shtml"
 AUTHOR="Adam Nunez"
 
 # Starting the script - do not exist yet
@@ -23,7 +23,7 @@ POL_SetupWindow_presentation "$TITLE" "$EDITOR" "$GAME_URL" "$AUTHOR" "$PREFIX"
 
 # Check disc
 POL_SetupWindow_cdrom
-POL_SetupWindow_check_cdrom "DATA/BEDRAD1.TRK"
+POL_SetupWindow_check_cdrom "tdtwb2.mpx"
 
 # TmpDir comes back with an extra "/" in it
 POL_System_TmpDir="${POL_System_TmpDir/\/\//\/}"
@@ -36,10 +36,9 @@ POL_Wine_PrefixCreate "$WORKING_WINE_VERSION"
 
 # Config
 Set_OS "winxp"
-POL_Wine_DirectInput "DirectDrawRenderer" "gdi"
+#POL_Wine_DirectInput "DirectDrawRenderer" "gdi"
 
-#ln -s $CDROM $PREFIX/dosdevices/h: -- Doesn't work, needs to be added in winecfg
-winecfg #Manually configure virtual desktop
+winecfg #Manually configure virtual desktop and CD Drive
 
 # Install - Fails right now, issue copying some files
 POL_Wine_WaitBefore "$TITLE"
@@ -47,7 +46,7 @@ POL_Wine "$CDROM/SETUP.EXE" # Need to set up CD-Rom drive for this to work. :(
 
 POL_Wine_WaitExit "$TITLE"
 
-POL_Shortcut "titanic.exe" "$TITLE"
+POL_Shortcut "tdtwb.exe" "$TITLE"
 
 POL_SetupWindow_Close
 exit 0
