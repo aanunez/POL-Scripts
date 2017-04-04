@@ -6,3 +6,4 @@ The "icons" and "screenshot" folders are only used for archival here. They are r
 * Viscera Cleanup Detail - Can be used to install VCD, the DLC "House of Horrors" and the two spin off games "Santa's Rapage" and "Shadow Warrior". [Not POL Approved]
 * Titanic: Adventure Out of Time - Not currently working. Install fails to copy a few files, game fails at launch with error. WineHQ reports this as working 7 years ago. [Not POL Approved]
 * The Day The World Broke - Not currently working. Installs correctly. Disc is not found by wine, I assume this is due to some DRM. [Not POL Approved]
+* Starcraft 1.18 PTR - Blizzard is releasing starcraft for free. Its currently still in beta (PTR), but this script will fetch and install it. Currently on StarEdit (map maker) works. [Not POL Approved]

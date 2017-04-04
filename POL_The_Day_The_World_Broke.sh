@@ -14,11 +14,10 @@ EDITOR="Houghton Mifflin Interactive - David Wiesner"
 GAME_URL="http://www.houghtonmifflinbooks.com/authors/wiesner/books/books_day.shtml"
 AUTHOR="Adam Nunez"
 
-# Starting the script - do not exist yet
+# Init stuff - Images are not yet live on POL
 POL_GetSetupImages "http://files.playonlinux.com/resources/setups/$PREFIX/top.jpg" "http://files.playonlinux.com/resources/setups/$PREFIX/left.jpg" "$TITLE"
 POL_SetupWindow_Init
 POL_Debug_Init
-
 POL_SetupWindow_presentation "$TITLE" "$EDITOR" "$GAME_URL" "$AUTHOR" "$PREFIX"
 
 # Check disc

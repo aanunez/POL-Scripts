@@ -27,11 +27,10 @@ PREFIX_SHADOW="ShadowWarrior"
 STEAMID_SANTA="265210"
 STEAMID_SHADOW="255520"
 
-# Starting the script
+# Init stuff - Images are not yet live on POL
 POL_GetSetupImages "http://files.playonlinux.com/resources/setups/$PREFIX/top.jpg" "http://files.playonlinux.com/resources/setups/$PREFIX/left.jpg" "$TITLE"
 POL_SetupWindow_Init
 POL_Debug_Init
-
 POL_SetupWindow_presentation "$TITLE" "$EDITOR" "$GAME_URL" "$AUTHOR" "$PREFIX"
 
 # Setting prefix path

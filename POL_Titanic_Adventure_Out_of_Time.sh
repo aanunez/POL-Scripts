@@ -14,11 +14,10 @@ EDITOR="Cyberflix"
 GAME_URL="https://en.wikipedia.org/wiki/Titanic:_Adventure_Out_of_Time"
 AUTHOR="Adam Nunez"
 
-# Starting the script - do not exist yet
+# Init stuff - Images are not yet live on POL
 POL_GetSetupImages "http://files.playonlinux.com/resources/setups/$PREFIX/top.jpg" "http://files.playonlinux.com/resources/setups/$PREFIX/left.jpg" "$TITLE"
 POL_SetupWindow_Init
 POL_Debug_Init
-
 POL_SetupWindow_presentation "$TITLE" "$EDITOR" "$GAME_URL" "$AUTHOR" "$PREFIX"
 
 # Check disc
