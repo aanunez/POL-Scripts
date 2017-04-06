@@ -13,9 +13,9 @@ The "icons" and "screenshot" folders are only used for archival here. They are r
 
 * The Day The World Broke - Disc is not found by wine, I assume this is due to some DRM. [Not POL Approved]
 
-**Not Working**
+* Titanic: Adventure Out of Time - Script has issues copying files from the discs, but if done manually then the game will start. Currently the game is just a black screen. WineHQ reports this as working 7 years ago. [Not POL Approved]
 
-* Titanic: Adventure Out of Time - Not currently working. Install fails to copy a few files, game fails at launch with error. WineHQ reports this as working 7 years ago. [Not POL Approved]
+**Not Working**
 
 **In The Works**
 
