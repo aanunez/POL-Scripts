@@ -1,0 +1,14 @@
+Titanic falls back on using its install folder for data if the CD can't be found.
+Wine's CD emulation doesn't jive well with Titanic so a patch is needed.
+
+:00433A23 66837C241200            cmp word ptr [esp+12], 0000
+:00433A29 741A                    je 00433A45 <<<<< Replace w/ 90 90 (NoOp NoOp)
+:00433A2B 6633C0                  xor ax, ax
+:00433A2E 8B8C2440020000          mov ecx, dword ptr [esp+00000240]
+:00433A35 66C7010100              mov word ptr [ecx], 0001
+:00433A3A 5D                      pop ebp
+:00433A3B 5F                      pop edi
+:00433A3C 5E                      pop esi
+:00433A3D 5B                      pop ebx
+:00433A3E 81C428020000            add esp, 00000228
+:00433A44 C3                      ret
