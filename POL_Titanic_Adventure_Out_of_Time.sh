@@ -14,7 +14,7 @@ EDITOR="Cyberflix"
 GAME_URL="https://en.wikipedia.org/wiki/Titanic:_Adventure_Out_of_Time"
 AUTHOR="Adam Nunez"
 
-INSTALLED_PATH=".PlayOnLinux/wineprefix/"$PREFIX"/drive_c/Program Files/CyberFlix/Titanic"
+INSTALLED_PATH=$HOME"/.PlayOnLinux/wineprefix/"$PREFIX"/drive_c/Program Files/CyberFlix/Titanic"
 TITANIC_PATCH="QlNESUZGNDAxAAAAAAAAAD4AAAAAAAAAAAwHAAAAAABCWmg5MUFZJlNZuX4LeAAABEBCSKRAAAICIAAxDAgjEYhSwM2IS+LuSKcKEhcvwW8AQlpoOTFBWSZTWXyf23oAAzFiiMAAAAQBAAEAEAAACCAAMMAClKH6pkKLcFN6VRJu3UQr8XckU4UJB8n9t6BCWmg5F3JFOFCQAAAAAA=="
 
 # Init stuff - Images are not yet live on POL
@@ -38,7 +38,7 @@ MONITOR_NUMBER=$APP_ANSWER
 # Check disc
 POL_SetupWindow_cdrom
 POL_SetupWindow_check_cdrom "DATA/BEDRAD1.TRK"
-#TODO Ask if CD mounted correctly?
+#Ask if CD mounted correctly?
 #sudo apt install gddrescue
 #sudo ddrescue -d -b 2048 /dev/loop2p1 TITANIC1.iso Titanic.log
 #sudo ddrescue -d -b 2048 /dev/loop1p1 TITANIC2.iso Titanic.log
@@ -58,22 +58,24 @@ POL_Wine_WaitExit "$TITLE"
 
 # Copy over files
 POL_SetupWindow_wait "Copying Data Files..." "$Title"
-cp -R $CDROM/* "$INSTALLED_PATH" #TODO cp not working
+#cp -r $CDROM/* "$INSTALLED_PATH"
 POL_SetupWindow_message "$(eval_gettext 'Please insert disc 2 into your disk drive if not already done.')" "$TITLE"
 POL_SetupWindow_cdrom
 POL_SetupWindow_check_cdrom "data/a14.set"
 POL_SetupWindow_wait "Copying Data Files..." "$Title"
-cp -rf $CDROM/* "$INSTALLED_PATH" #TODO cp not working
+#cp -rf $CDROM/* "$INSTALLED_PATH"
 
 # Apply Patch
 cd "$INSTALLED_PATH"
 mv ti.exe ti_orig.exe
-openssl base64 -d $TITANIC_PATCH > ti_patch
+echo $TITANIC_PATCH > ti_patch_64
+openssl base64 -d -in ti_patch_64 > ti_patch
 bspatch ti_orig.exe ti.exe ti_patch
 
 # Setup shortcut to run in Xephyr
 POL_Shortcut "ti.exe" "$TITLE"
-POL_Shortcut_InsertBeforeWine "$TITLE" "Xephyr :1 -ac -screen 640x480x16 & DISPLAY=:1 \\"
+POL_Shortcut_InsertBeforeWine "$TITLE" "Xephyr :$MONITOR_NUMBER -ac -screen 640x480x8 & DISPLAY=:$MONITOR_NUMBER \\"
+POL_Shortcut "titanic.exe" "Ti Launcher"
 
 POL_SetupWindow_Close
 exit 0
