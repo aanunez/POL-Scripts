@@ -4,6 +4,19 @@
 # Wine version used : 2.4
 # Distribution used to test : Linux Mint 18.1 x64
 # Author : Adam Nunez
+
+# Issues:
+# Major
+#   The Xephyr start doesn't work. 256 color work arounds for
+#   wine were broken by a X server update a while ago. No new
+#   way exists to fix this. Same issue with VNC Xnest etc.
+# Minor
+#   Copy doesn't correctly change the owner to user, either
+#   copy manually or chmod after.
+#   Not sure if GDI actually needs to be used
+
+# Dependencies: bspatch, bsdiff, openssl, xephyr, metacity, gddrescue
+
 [ "$PLAYONLINUX" = "" ] && exit 0
 source "$PLAYONLINUX/lib/sources"
 
@@ -49,7 +62,7 @@ POL_Wine_PrefixCreate "$WORKING_WINE_VERSION"
 
 # Config
 Set_OS "winxp"
-POL_Wine_DirectInput "DirectDrawRenderer" "gdi"
+POL_Wine_DirectInput "DirectDrawRenderer" "gdi" # TODO Things are just as borken without this
 #Set_Desktop "On" "640" "480"
 
 # Install
@@ -75,7 +88,14 @@ bspatch ti_orig.exe ti.exe ti_patch
 # Setup shortcut to run in Xephyr
 POL_Shortcut "ti.exe" "$TITLE"
 POL_Shortcut_InsertBeforeWine "$TITLE" "Xephyr :$MONITOR_NUMBER -ac -screen 640x480x8 & DISPLAY=:$MONITOR_NUMBER \\"
-POL_Shortcut "titanic.exe" "Ti Launcher"
+# Shorcut should look something like...
+#Xephyr :1 -ac -screen 640x480x8 &
+#DISPLAY=:1 metacity &
+#DISPLAY=:1 xsetroot -solid gray50
+#DISPLAY=:1 \
+#POL_Wine ti.exe "$@"
+
+
 
 POL_SetupWindow_Close
 exit 0
