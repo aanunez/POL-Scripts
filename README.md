@@ -17,9 +17,12 @@ The "icons" and "screenshot" folders are only used for archival here. They are r
 
 **Not Working**
 
+**Untested**
+
+* World of Warcraft 1.12.1 Private Server
+
 **In The Works**
 
+* Muppet Treasure Island
 * Star Trek Elite Force 1 & 2
 * Star Trek Armada 1 & 2
-* Muppet Treasure Island
-* World of Warcraft 1.12.1 Private Server
