@@ -17,6 +17,8 @@ The "icons" and "screenshot" folders are only used for archival here. They are r
 
 **Not Working**
 
+* Star Trek Elite Force 1 - This game works when installed manually using wine 2.5. There is an issue during the install using this script.
+
 **Untested**
 
 * World of Warcraft 1.12.1 Private Server
@@ -24,5 +26,5 @@ The "icons" and "screenshot" folders are only used for archival here. They are r
 **In The Works**
 
 * Muppet Treasure Island
-* Star Trek Elite Force 1 & 2
+* Star Trek Elite Force 2
 * Star Trek Armada 1 & 2
