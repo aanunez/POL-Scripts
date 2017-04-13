@@ -17,7 +17,7 @@ The "icons" and "screenshot" folders are only used for archival here. They are r
 
 **Not Working**
 
-* Star Trek Elite Force 1 - This game works when installed manually using wine 2.5. There is an issue during the install using this script.
+* Star Trek Elite Force 1 - This game works when installed manually using wine 2.5. When using the script a "Keyfile dll" error is shown when installing the expansion pack.
 
 **Untested**
 

@@ -46,7 +46,7 @@ POL_SetupWindow_question "Would you like to install the Elite Force Expansion Pa
 if [ "$APP_ANSWER" == "TRUE" ]; then
     POL_SetupWindow_cdrom
     POL_SetupWindow_check_cdrom "Setup/baseef/pak2.pk3"
-    POL_Wine "$CDROM/Setup.EXE"
+    POL_Wine "$CDROM/AUTORUN.EXE"                           #TODO Could not open String file error
     POL_Wine_WaitExit "$TITLE"
 
     # Apply Patch, only works for w/ Expansion
