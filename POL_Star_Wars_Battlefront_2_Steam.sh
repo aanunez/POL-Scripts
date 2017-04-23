@@ -32,8 +32,7 @@ POL_Call POL_Install_steam
 POL_SetupWindow_message "$(eval_gettext 'Please close Steam once $TITLE has finished installing so that Play On Linux may complete the install.\n\nClick 'Next' to begin.')" "$TITLE"
 cd "$WINEPREFIX/drive_c/$PROGRAMFILES/Steam"
 POL_Wine "steam.exe steam://install/$STEAMID"
-POL_Shortcut "steam.exe" "$TITLE" "http://files.playonlinux.com/resources/setups/$PREFIX/$PREFIX-48x48.jpg" "steam://rungameid/$STEAMID"
-POL_SetupWindow_message "Click 'Next' once $TITLE has finished downloading." "$TITLE"
+POL_Shortcut "steam.exe" "$TITLE" "" "steam://rungameid/$STEAMID"
 
 # Wrap up
 POL_Wine_WaitExit "$TITLE"
