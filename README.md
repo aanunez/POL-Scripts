@@ -7,7 +7,9 @@ The "icons" and "screenshot" folders are only used for archival here. They are r
 
 * Viscera Cleanup Detail - Can be used to install VCD, the DLC "House of Horrors" and the two spin off games "Santa's Rapage" and "Shadow Warrior". [Not POL Approved]
 
-* Star Wars Battle Front 2 - Used to install the BattleFront2 version on steam. Runs without issue, but load times are a little slow (~30 seconds, they are around 5-10 on Windows).
+* Star Wars Battle Front 2 - Used to install the BattleFront2 version on steam. Runs without issue, but load times are a little slow (~30 seconds, they are around 5-10 on Windows). [Not POL Approved]
+
+* Star Trek Armada - Installs the base game and, optionally, the 1.2 and 1.3 patches from either a local source or via a download from armadafiles.com. The game runs "OK" but there are some graphical errors, especially on the menus where animations do not load correctly. [Not POL Approved]
 
 **Installing**
 
@@ -33,4 +35,4 @@ The "icons" and "screenshot" folders are only used for archival here. They are r
 
 * Muppet Treasure Island
 * Star Trek Elite Force 2
-* Star Trek Armada 1 & 2
+* Star Trek Armada 2
