@@ -35,12 +35,10 @@ POL_Wine_PrefixCreate "$WORKING_WINE_VERSION"
 
 # Config
 Set_OS "winxp"
-Set_Desktop "On" "1280" "1024" #Best square resolution on 1080p.
-#You WILL want a window, armada will mess up your resolution otherwise
 
 # Install
 POL_Wine "$CDROM/setup.EXE"
-POL_Shortcut "Armada.exe" "$TITLE"
+POL_Wine_WaitExit "$TITLE"
 
 # Ask about installing the updates
 POL_SetupWindow_question "Would you like to download (or install from disk) the 1.2 (official) and 1.3 (fan-made) patches from Armadafiles.com?\n\nThese updates fix various bugs, add widescreen support, and remove the need for the disk to be insterted while playing." "$TITLE"
@@ -71,7 +69,12 @@ if [ "$APP_ANSWER" == "TRUE" ]; then
     fi
 fi
 
+# Config
+Set_Desktop "On" "1280" "1024" #Best square resolution on 1080p.
+#You WILL want a window, armada will mess up your resolution otherwise
+
 # Wrap up
+POL_Shortcut "Armada.exe" "$TITLE"
 POL_Wine_WaitExit "$TITLE"
 POL_SetupWindow_Close
 exit 0
