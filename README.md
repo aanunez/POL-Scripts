@@ -23,7 +23,7 @@ The "icons" and "screenshot" folders are only used for archival here. They are r
 
 **Untested/Defunct**
 
-* World of Warcraft 1.12.1 Private Server
+* World of Warcraft 1.12.1 Private Server - No longer needed, Wine 2.4 + (and possibly earlier) will run wine without any configuration `wine WoW.exe --opengl`
 
 * Starcraft 1.18 PTR - SC 1.18 is out of PTR. Blizzard is releasing starcraft for free. Its currently still in beta (PTR), but this script will fetch and install it. Currently only StarEdit (map maker) works, SC bombs out when trying to download an update from blizz.
 
